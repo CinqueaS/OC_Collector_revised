@@ -20,8 +20,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/stories">Stories</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'story-index' %}">Stories</a></li>
+          <li><a href="{% url 'story-create' %}">Create a Story</a></li>
         </ul>
       </nav>
     </header>

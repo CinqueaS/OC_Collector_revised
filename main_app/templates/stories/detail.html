@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/stories/story-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="story-container">
+  <div class="story-img">
+    <img src="{% static 'images/book logo.png' %}" alt="An open book logo" />
+  </div>
+  <div class="story-details">
+    <h1>{{ story.title }}</h1>
+    <h3>Current chapter count: {{ story.chapters }}</h3>
+    <p>{{ story.synopsis }}</p>
+  </div>
+</section>
+{% endblock %}
