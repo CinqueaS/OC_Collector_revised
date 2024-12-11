@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Story 
 
 def home(request):
@@ -11,3 +12,9 @@ def story_index(request):
 def story_detail(request, story_id):
     story = Story.objects.get(id=story_id)
     return render(request, 'stories/detail.html', {'story': story})
+
+
+class StoryCreate(CreateView):
+    model = Story
+    fields = '__all__' 
+    success_url= '/stories/'
