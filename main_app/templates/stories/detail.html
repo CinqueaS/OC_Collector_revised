@@ -12,6 +12,9 @@
     <h1>{{ story.title }}</h1>
     <h3>Current chapter count: {{ story.chapters }}</h3>
     <p>{{ story.synopsis }}</p>
+    <div class="story-actions">
+        <a href="{% url 'story-update' story.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'story-delete' story.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 {% endblock %}
