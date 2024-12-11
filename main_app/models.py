@@ -12,7 +12,7 @@ class Story(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("story_detail", kwargs={"story_id": self.id})
+        return reverse("story-detail", kwargs={"story_id": self.id})
     
 class Chapter(models.Model):
     name = models.CharField(max_length=200)
