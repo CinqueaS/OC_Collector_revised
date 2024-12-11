@@ -14,3 +14,10 @@ class Story(models.Model):
     def get_absolute_url(self):
         return reverse("story_detail", kwargs={"story_id": self.id})
     
+class Chapter(models.Model):
+    name = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+    story = models.ForeignKey(Story, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.name}"
