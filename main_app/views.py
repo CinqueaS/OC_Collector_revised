@@ -11,6 +11,9 @@ from .forms import ChapterForm
 class Home(LoginView):
     template_name = 'home.html'
 
+def about(request):
+    return render(request, 'about.html')
+
 def story_index(request):
     stories = Story.objects.all()
     return render(request, 'stories.html', {'stories': stories})

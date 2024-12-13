@@ -159,6 +159,9 @@ html {
     font-size: var(--font-reg);
   }
   
+  .page-content img{
+    width: 500px;
+  }
   @media only screen and (min-width: 768px) {
     header {
       position: sticky;

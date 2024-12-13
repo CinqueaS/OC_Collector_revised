@@ -12,22 +12,25 @@
     <h1>{{ story.title }}</h1>
     <h3>Current chapter count: {{ story.chapters }}</h3>
     <p>{{ story.synopsis }}</p>
+    {% if user == story.user %}
     <div class="story-actions">
         <a href="{% url 'story-update' story.id %}" class="btn warn">Edit</a>
         <a href="{% url 'story-delete' story.id %}" class="btn danger">Delete</a>
   </div>
+  {% endif %}
 </section>
  <div class="story-container">
     <section class="chapters">
       <div class="subsection-title">
         <h2>Chapters</h2>
+        {% if user == story.user %}
         <h3>Add a Chapter</h3>
 <form action="{% url 'add-chapter' story.id %}" method="post" class="subsection-content" autocomplete="off">
   {% csrf_token %} 
   {{ chapter_form.as_p }}
   <button type="submit" class="btn submit">Add Chapter</button>
 </form>
-
+{% endif %}
       </div>
       <table>
         <tbody>
