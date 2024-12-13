@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import UserCreationForm
 from .models import Story 
 from .forms import ChapterForm
 
-def home(request):
-    return render(request, 'home.html')
+class Home(LoginView):
+    template_name = 'home.html'
 
 def story_index(request):
     stories = Story.objects.all()
@@ -32,6 +34,10 @@ class StoryCreate(CreateView):
     model = Story
     fields = ['title', 'chapters', 'synopsis'] 
     success_url= '/stories/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class StoryUpdate(UpdateView):
     model = Story

@@ -1,8 +1,25 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
 {% block content %}
-<h1>Here are our Operatives</h1>
-<hr />
-<p class="page-content">
-  This is where we will eventually show login credentials
-</p>
+
+<section class="logo-container">
+  <div class="noel-container">
+    <img src="{% static 'images/Noel_2.png' %}" alt="Noel Branhen" />
+  </div>
+</section>
+
+{% if not user.is_authenticated %}
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
+
 {% endblock %}
