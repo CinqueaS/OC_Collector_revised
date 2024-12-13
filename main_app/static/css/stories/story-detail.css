@@ -1,13 +1,13 @@
 .story-container {
-    padding: 35px 30px;
+    padding: 35px 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
-  .story-img {
-    width: 75%;
+  .story-img img{
+    width: 80%;
     max-width: 350px;
   }
   
@@ -17,14 +17,15 @@
   }
   
   .story-details {
-    width: 98%;
+    width: 50%;
+    display: inline;
   }
   
   .story-actions {
     margin-top: 20px;
   }
   
-  .feedings-toy-container {
+  .chapters-container {
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
@@ -32,7 +33,7 @@
   }
   
   .subsection-title {
-    display: flex;
+    display: column;
     align-items: center;
     margin-bottom: 12px;
   }
@@ -94,7 +95,7 @@
     margin: 5px 0;
   }
   
-  .feedings-toy-container > section {
+  .chapters-container > section {
     width: 80%;
     min-width: 360px;
     border: var(--borders);
@@ -116,13 +117,13 @@
     margin-left: 16px;
   }
   
-  .feedings h2,
+  .chapters h2,
   .toys h2 {
     font-size: 3.2rem;
     margin: 0;
   }
   
-  .feedings h3,
+  .chapters h3,
   .toys h3 {
     font-size: var(--font-xl);
     margin: 10px 0;
@@ -140,25 +141,25 @@
     padding: 3px;
   }
   
-  .feedings table {
+  .chapters table {
     width: calc(100% - 16px);
     text-align: left;
     border-collapse: collapse;
     margin: 0 8px;
   }
   
-  .feedings td {
+  .chapters td {
     padding: 8px 5px;
-    font-size: var(--font-reg);
+    font-size: 24px;
   }
   
-  .feedings th {
+  .chapters th {
     font-size: var(--font-l);
     padding: 5px 5px 0;
     border-bottom: rgb(36, 116, 248) solid 2px;
   }
   
-  .feedings tr:nth-child(even) {
+  .chapters tr:nth-child(even) {
     background-color: #f3f3fd;
   }
   
@@ -201,19 +202,19 @@
       margin-right: 25px;
     }
   
-    .feedings-toy-container {
+    .chapters-container {
       flex-direction: row;
       justify-content: space-around;
       align-items: flex-start;
     }
   
-    .feedings-toy-container > section {
+    .chapters-container > section {
       width: 45%;
     }
   }
   
   @media only screen and (min-width: 1024px) {
-    .feedings-toy-container {
+    .chapters-container {
       padding: 0 40px;
     }
   }

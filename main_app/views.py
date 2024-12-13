@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Story 
+from .forms import ChapterForm
 
 def home(request):
     return render(request, 'home.html')
@@ -11,7 +12,20 @@ def story_index(request):
 
 def story_detail(request, story_id):
     story = Story.objects.get(id=story_id)
-    return render(request, 'stories/detail.html', {'story': story})
+    chapter_form = ChapterForm()
+    return render(request, 'stories/detail.html', {'story': story, 'chapter_form': chapter_form})
+
+def add_chapter(request, story_id):
+
+    form = ChapterForm(request.POST)
+
+    if form.is_valid():
+
+        new_chapter = form.save(commit=False)
+        new_chapter.story_id = story_id
+        new_chapter.save()
+    return redirect('story-detail', story_id=story_id)
+
 
 
 class StoryCreate(CreateView):

@@ -17,34 +17,23 @@
         <a href="{% url 'story-delete' story.id %}" class="btn danger">Delete</a>
   </div>
 </section>
-{% endblock %}
-
-<div class="feedings-toy-container">
-    <section class="feedings">
+ <div class="story-container">
+    <section class="chapters">
       <div class="subsection-title">
         <h2>Chapters</h2>
-        <img
-          src="{% static  %}"
-          alt="An ice cream cone cat"
-        />
-        <img src="{% static  %}" alt="A cat as onigiri" />
-        <img
-          src="{% static %}"
-          alt="A kabob of kittens"
-        />
+        <h3>Add a Chapter</h3>
+<form action="{% url 'add-chapter' story.id %}" method="post" class="subsection-content" autocomplete="off">
+  {% csrf_token %} 
+  {{ chapter_form.as_p }}
+  <button type="submit" class="btn submit">Add Chapter</button>
+</form>
+
       </div>
       <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Meal</th>
-          </tr>
-        </thead>
         <tbody>
-          {% for feeding in cat.feeding_set.all %}
+          {% for chapter in story.chapter_set.all %}
             <tr>
-              <td>{{feeding.date}}</td>
-              <td>{{feeding.get_meal_display}}</td>
+              <td><a href="{{chapter.link}}" target='_blank'> {{chapter.name}}</a></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -52,3 +41,4 @@
     </section>
   </div>
   
+  {% endblock %}

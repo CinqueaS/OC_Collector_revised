@@ -1,19 +1,19 @@
 .card-container {
-    padding: 0 50px;
+    padding: 0 100px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
   
   .card {
-    width: 275px;
+    width: 350px;
     margin: 10px;
     border: var(--borders);
     box-shadow: var(--card-box-shadow);
   }
   
   .card-content {
-    padding: 30px;
+    padding: 10px;
     width: 50%;
   }
   
@@ -33,7 +33,11 @@
   }
   
   .card p {
+    width: 275px;
     margin: 5px 0;
     font-size: var(--font-reg);
   }
   
+  .card img {
+    width: 60%
+  }
