@@ -42,35 +42,11 @@
     margin: 0 8px;
   }
   
-  .toy-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
   .color-block {
     opacity: 0.8;
     height: 25px;
     width: 25px;
     margin-right: 10px;
-  }
-  
-  .unfed,
-  .fed,
-  .no-toys,
-  .all-toys {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .unfed,
-  .no-toys {
-    color: var(--danger);
-  }
-  
-  .fed,
-  .all-toys {
-    color: var(--submit);
   }
   
   .story-details h1 {
@@ -117,14 +93,12 @@
     margin-left: 16px;
   }
   
-  .chapters h2,
-  .toys h2 {
+  .chapters h2 {
     font-size: 3.2rem;
     margin: 0;
   }
   
-  .chapters h3,
-  .toys h3 {
+  .chapters h3 {
     font-size: var(--font-xl);
     margin: 10px 0;
   }
@@ -163,19 +137,6 @@
     background-color: #f3f3fd;
   }
   
-  .toy-container p {
-    margin: 12px 0;
-  }
-  
-  .toy-container a {
-    text-decoration: none;
-    color: #111;
-  }
-  
-  .toy-container .btn {
-    padding: 3px 10px;
-    margin-left: 10px;
-  }
   
   #file-input {
     overflow: hidden;
